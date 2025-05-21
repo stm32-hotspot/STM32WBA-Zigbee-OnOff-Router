@@ -1,0 +1,12 @@
+C:/Users/petr david/STM32CubeIDE/WBA_ZB_1_6_1/Zigbee_OnOff_Router_Demo/Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_flash.c:175:19:HAL_FLASH_Program	21
+C:/Users/petr david/STM32CubeIDE/WBA_ZB_1_6_1/Zigbee_OnOff_Router_Demo/Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_flash.c:248:19:HAL_FLASH_Program_IT	21
+C:/Users/petr david/STM32CubeIDE/WBA_ZB_1_6_1/Zigbee_OnOff_Router_Demo/Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_flash.c:470:13:HAL_FLASH_EndOfOperationCallback	1
+C:/Users/petr david/STM32CubeIDE/WBA_ZB_1_6_1/Zigbee_OnOff_Router_Demo/Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_flash.c:488:13:HAL_FLASH_OperationErrorCallback	1
+C:/Users/petr david/STM32CubeIDE/WBA_ZB_1_6_1/Zigbee_OnOff_Router_Demo/Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_flash.c:315:6:HAL_FLASH_IRQHandler	10
+C:/Users/petr david/STM32CubeIDE/WBA_ZB_1_6_1/Zigbee_OnOff_Router_Demo/Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_flash.c:521:19:HAL_FLASH_Unlock	2
+C:/Users/petr david/STM32CubeIDE/WBA_ZB_1_6_1/Zigbee_OnOff_Router_Demo/Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_flash.c:563:19:HAL_FLASH_Lock	1
+C:/Users/petr david/STM32CubeIDE/WBA_ZB_1_6_1/Zigbee_OnOff_Router_Demo/Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_flash.c:596:19:HAL_FLASH_OB_Unlock	2
+C:/Users/petr david/STM32CubeIDE/WBA_ZB_1_6_1/Zigbee_OnOff_Router_Demo/Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_flash.c:618:19:HAL_FLASH_OB_Lock	1
+C:/Users/petr david/STM32CubeIDE/WBA_ZB_1_6_1/Zigbee_OnOff_Router_Demo/Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_flash.c:636:19:HAL_FLASH_OB_Launch	1
+C:/Users/petr david/STM32CubeIDE/WBA_ZB_1_6_1/Zigbee_OnOff_Router_Demo/Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_flash.c:677:10:HAL_FLASH_GetError	1
+C:/Users/petr david/STM32CubeIDE/WBA_ZB_1_6_1/Zigbee_OnOff_Router_Demo/Drivers/STM32WBAxx_HAL_Driver/Src/stm32wbaxx_hal_flash.c:701:19:FLASH_WaitForLastOperation	7

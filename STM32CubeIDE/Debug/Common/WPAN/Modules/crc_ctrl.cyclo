@@ -1,0 +1,6 @@
+C:/Users/petr david/STM32CubeIDE/WBA_ZB_1_6_1/Zigbee_OnOff_Router_Demo/Projects/Common/WPAN/Modules/crc_ctrl.c:299:29:CRCCTRL_MutexTake	1
+C:/Users/petr david/STM32CubeIDE/WBA_ZB_1_6_1/Zigbee_OnOff_Router_Demo/Projects/Common/WPAN/Modules/crc_ctrl.c:304:29:CRCCTRL_MutexRelease	1
+C:/Users/petr david/STM32CubeIDE/WBA_ZB_1_6_1/Zigbee_OnOff_Router_Demo/Projects/Common/WPAN/Modules/crc_ctrl.c:69:29:CRCCTRL_Init	2
+C:/Users/petr david/STM32CubeIDE/WBA_ZB_1_6_1/Zigbee_OnOff_Router_Demo/Projects/Common/WPAN/Modules/crc_ctrl.c:91:29:CRCCTRL_RegisterHandle	4
+C:/Users/petr david/STM32CubeIDE/WBA_ZB_1_6_1/Zigbee_OnOff_Router_Demo/Projects/Common/WPAN/Modules/crc_ctrl.c:127:29:CRCCTRL_Calculate	12
+C:/Users/petr david/STM32CubeIDE/WBA_ZB_1_6_1/Zigbee_OnOff_Router_Demo/Projects/Common/WPAN/Modules/crc_ctrl.c:185:29:CRCCTRL_Accumulate	12

@@ -1,0 +1,10 @@
+C:/Users/petr david/STM32CubeIDE/WBA_ZB_1_6_1/Zigbee_OnOff_Router_Demo/System/Interfaces/stm32_lpm_if.c:554:6:PWR_ExitSleepMode	2
+C:/Users/petr david/STM32CubeIDE/WBA_ZB_1_6_1/Zigbee_OnOff_Router_Demo/System/Interfaces/stm32_lpm_if.c:532:6:PWR_EnterSleepMode	2
+C:/Users/petr david/STM32CubeIDE/WBA_ZB_1_6_1/Zigbee_OnOff_Router_Demo/System/Interfaces/stm32_lpm_if.c:296:16:PWR_EnterOffMode	3
+C:/Users/petr david/STM32CubeIDE/WBA_ZB_1_6_1/Zigbee_OnOff_Router_Demo/System/Interfaces/stm32_lpm_if.c:386:16:PWR_ExitOffMode	5
+C:/Users/petr david/STM32CubeIDE/WBA_ZB_1_6_1/Zigbee_OnOff_Router_Demo/System/Interfaces/stm32_lpm_if.c:476:16:PWR_EnterStopMode	2
+C:/Users/petr david/STM32CubeIDE/WBA_ZB_1_6_1/Zigbee_OnOff_Router_Demo/System/Interfaces/stm32_lpm_if.c:509:16:PWR_ExitStopMode	4
+C:/Users/petr david/STM32CubeIDE/WBA_ZB_1_6_1/Zigbee_OnOff_Router_Demo/System/Interfaces/stm32_lpm_if.c:135:23:Standby_Restore_GPIO	1
+C:/Users/petr david/STM32CubeIDE/WBA_ZB_1_6_1/Zigbee_OnOff_Router_Demo/System/Interfaces/stm32_lpm_if.c:570:6:PWR_EnableSleepMode	2
+C:/Users/petr david/STM32CubeIDE/WBA_ZB_1_6_1/Zigbee_OnOff_Router_Demo/System/Interfaces/stm32_lpm_if.c:580:6:PWR_DisableSleepMode	1
+C:/Users/petr david/STM32CubeIDE/WBA_ZB_1_6_1/Zigbee_OnOff_Router_Demo/System/Interfaces/stm32_lpm_if.c:587:10:is_boot_from_standby	3

@@ -1,0 +1,3 @@
+C:/Users/petr david/STM32CubeIDE/WBA_ZB_1_6_1/Zigbee_OnOff_Router_Demo/Projects/Common/WPAN/Modules/MemoryManager/stm32_mm.c:181:8:UTIL_MM_GetBuffer	32	static
+C:/Users/petr david/STM32CubeIDE/WBA_ZB_1_6_1/Zigbee_OnOff_Router_Demo/Projects/Common/WPAN/Modules/MemoryManager/stm32_mm.c:338:6:UTIL_MM_ReleaseBuffer	8	static
+C:/Users/petr david/STM32CubeIDE/WBA_ZB_1_6_1/Zigbee_OnOff_Router_Demo/Projects/Common/WPAN/Modules/MemoryManager/stm32_mm.c:409:6:UTIL_MM_Init	16	static

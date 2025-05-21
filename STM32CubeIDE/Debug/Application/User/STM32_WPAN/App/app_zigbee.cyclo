@@ -1,0 +1,17 @@
+C:/Users/petr david/STM32CubeIDE/WBA_ZB_1_6_1/Zigbee_OnOff_Router_Demo/STM32_WPAN/App/app_zigbee.c:229:13:APP_ZIGBEE_NwkFormWaitElapsed	2
+C:/Users/petr david/STM32CubeIDE/WBA_ZB_1_6_1/Zigbee_OnOff_Router_Demo/STM32_WPAN/App/app_zigbee.c:685:13:APP_ZIGBEE_Printf	2
+C:/Users/petr david/STM32CubeIDE/WBA_ZB_1_6_1/Zigbee_OnOff_Router_Demo/STM32_WPAN/App/app_zigbee.c:363:13:ZbStartupWaitCallback	1
+C:/Users/petr david/STM32CubeIDE/WBA_ZB_1_6_1/Zigbee_OnOff_Router_Demo/STM32_WPAN/App/app_zigbee.c:249:13:APP_ZIGBEE_NwkFormWaitJoinElapsed	2
+C:/Users/petr david/STM32CubeIDE/WBA_ZB_1_6_1/Zigbee_OnOff_Router_Demo/STM32_WPAN/App/app_zigbee.c:457:13:APP_ZIGBEE_ZbZdoPermitJoinReqCallback	2
+C:/Users/petr david/STM32CubeIDE/WBA_ZB_1_6_1/Zigbee_OnOff_Router_Demo/STM32_WPAN/App/app_zigbee.c:419:30:APP_ZIGBEE_DeviceJointCallback	3
+C:/Users/petr david/STM32CubeIDE/WBA_ZB_1_6_1/Zigbee_OnOff_Router_Demo/STM32_WPAN/App/app_zigbee.c:276:6:APP_ZIGBEE_NwkFormOrJoin	11
+C:/Users/petr david/STM32CubeIDE/WBA_ZB_1_6_1/Zigbee_OnOff_Router_Demo/STM32_WPAN/App/app_zigbee.c:111:6:APP_ZIGBEE_NwkFormOrJoinTaskInit	2
+C:/Users/petr david/STM32CubeIDE/WBA_ZB_1_6_1/Zigbee_OnOff_Router_Demo/STM32_WPAN/App/app_zigbee.c:169:6:APP_ZIGBEE_StackLayersInit	6
+C:/Users/petr david/STM32CubeIDE/WBA_ZB_1_6_1/Zigbee_OnOff_Router_Demo/STM32_WPAN/App/app_zigbee.c:476:6:APP_ZIGBEE_PermitJoin	2
+C:/Users/petr david/STM32CubeIDE/WBA_ZB_1_6_1/Zigbee_OnOff_Router_Demo/STM32_WPAN/App/app_zigbee.c:499:6:APP_ZIGBEE_IsAppliJoinNetwork	3
+C:/Users/petr david/STM32CubeIDE/WBA_ZB_1_6_1/Zigbee_OnOff_Router_Demo/STM32_WPAN/App/app_zigbee.c:524:6:APP_ZIGBEE_AddDeviceWithInstallCode	5
+C:/Users/petr david/STM32CubeIDE/WBA_ZB_1_6_1/Zigbee_OnOff_Router_Demo/STM32_WPAN/App/app_zigbee.c:573:6:APP_ZIGBEE_GetCurrentChannel	7
+C:/Users/petr david/STM32CubeIDE/WBA_ZB_1_6_1/Zigbee_OnOff_Router_Demo/STM32_WPAN/App/app_zigbee.c:615:6:APP_ZIGBEE_SetTxPower	1
+C:/Users/petr david/STM32CubeIDE/WBA_ZB_1_6_1/Zigbee_OnOff_Router_Demo/STM32_WPAN/App/app_zigbee.c:626:8:APP_ZIGBEE_GetDisplaySecKey	5
+C:/Users/petr david/STM32CubeIDE/WBA_ZB_1_6_1/Zigbee_OnOff_Router_Demo/STM32_WPAN/App/app_zigbee.c:658:6:APP_ZIGBEE_PrintGenericInfo	2
+C:/Users/petr david/STM32CubeIDE/WBA_ZB_1_6_1/Zigbee_OnOff_Router_Demo/STM32_WPAN/App/app_zigbee.c:701:6:APP_ZIGBEE_Error	1
