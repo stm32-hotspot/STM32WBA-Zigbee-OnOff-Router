@@ -66,6 +66,9 @@
 
 #define APP_ZIGBEE_TOGGLE_PERIOD          (uint32_t)( 1000u ) /* Toggle OnOff every seconds 1s */
 
+/* A subset of WPAN_CHANNELMASK_2400MHZ_HA (HA preferred channels) */
+#define APP_ZIGBEE_CHANNELMASK_2400MHZ_TCLK_PRIMARY  0x02108800 /* Channels 11, 15, 20, 25*/
+
 /* USER CODE END PD */
 
 // -- Redefine Clusters to better code read --
@@ -234,7 +237,7 @@ void APP_ZIGBEE_GetStartupConfig( struct ZbStartupT * pstConfig )
   pstConfig->startupControl = stZigbeeAppInfo.eStartupControl;
   pstConfig->channelList.count = 1;
   pstConfig->channelList.list[0].page = 0;
-  pstConfig->channelList.list[0].channelMask = APP_ZIGBEE_CHANNEL_MASK;
+  pstConfig->channelList.list[0].channelMask = APP_ZIGBEE_CHANNEL_MASK|APP_ZIGBEE_CHANNELMASK_2400MHZ_TCLK_PRIMARY;
 
   /* Set the TX-Power */
   if ( APP_ZIGBEE_SetTxPower( APP_ZIGBEE_TX_POWER ) == false )
@@ -332,8 +335,7 @@ void APP_BSP_Button1Action(void)
     /* Prepare destination */
     memset( &stDest, 0, sizeof( stDest) );
     stDest.endpoint = APP_ZIGBEE_ENDPOINT;
-    stDest.mode = ZB_APSDE_ADDRMODE_GROUP;
-    stDest.nwkAddr = APP_ZIGBEE_GROUP_ADDRESS;
+    stDest.mode = ZB_APSDE_ADDRMODE_NOTPRESENT; // Send request to binded devices
 
     LOG_INFO_APP( "[ONOFF] SW1 pushed, sending 'TOGGLE'" );
     eStatus = ZbZclOnOffClientToggleReq( stZigbeeAppInfo.OnOffClient, &stDest, NULL, NULL );
