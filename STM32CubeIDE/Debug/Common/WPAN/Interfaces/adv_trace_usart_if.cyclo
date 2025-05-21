@@ -1,0 +1,6 @@
+C:/Users/petr david/STM32CubeIDE/WBA_ZB_1_6_1/Zigbee_OnOff_Router_Demo/Projects/Common/WPAN/Interfaces/adv_trace_usart_if.c:69:25:UART_Init	1
+C:/Users/petr david/STM32CubeIDE/WBA_ZB_1_6_1/Zigbee_OnOff_Router_Demo/Projects/Common/WPAN/Interfaces/adv_trace_usart_if.c:158:13:UsartIf_TxCpltCallback	1
+C:/Users/petr david/STM32CubeIDE/WBA_ZB_1_6_1/Zigbee_OnOff_Router_Demo/Projects/Common/WPAN/Interfaces/adv_trace_usart_if.c:81:25:UART_DeInit	2
+C:/Users/petr david/STM32CubeIDE/WBA_ZB_1_6_1/Zigbee_OnOff_Router_Demo/Projects/Common/WPAN/Interfaces/adv_trace_usart_if.c:98:25:UART_StartRx	2
+C:/Users/petr david/STM32CubeIDE/WBA_ZB_1_6_1/Zigbee_OnOff_Router_Demo/Projects/Common/WPAN/Interfaces/adv_trace_usart_if.c:167:13:UsartIf_RxCpltCallback	1
+C:/Users/petr david/STM32CubeIDE/WBA_ZB_1_6_1/Zigbee_OnOff_Router_Demo/Projects/Common/WPAN/Interfaces/adv_trace_usart_if.c:115:25:UART_TransmitDMA	18

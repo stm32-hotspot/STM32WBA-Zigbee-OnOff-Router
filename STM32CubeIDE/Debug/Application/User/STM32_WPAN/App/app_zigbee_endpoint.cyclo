@@ -1,0 +1,11 @@
+C:/Users/petr david/STM32CubeIDE/WBA_ZB_1_6_1/Zigbee_OnOff_Router_Demo/STM32_WPAN/App/app_zigbee_endpoint.c:353:13:APP_ZIGBEE_TimerToggleCallback	1
+C:/Users/petr david/STM32CubeIDE/WBA_ZB_1_6_1/Zigbee_OnOff_Router_Demo/STM32_WPAN/App/app_zigbee_endpoint.c:107:6:APP_ZIGBEE_ApplicationInit	1
+C:/Users/petr david/STM32CubeIDE/WBA_ZB_1_6_1/Zigbee_OnOff_Router_Demo/STM32_WPAN/App/app_zigbee_endpoint.c:134:6:APP_ZIGBEE_ApplicationStart	1
+C:/Users/petr david/STM32CubeIDE/WBA_ZB_1_6_1/Zigbee_OnOff_Router_Demo/STM32_WPAN/App/app_zigbee_endpoint.c:161:6:APP_ZIGBEE_PersistenceStartup	1
+C:/Users/petr david/STM32CubeIDE/WBA_ZB_1_6_1/Zigbee_OnOff_Router_Demo/STM32_WPAN/App/app_zigbee_endpoint.c:173:6:APP_ZIGBEE_ConfigEndpoints	1
+C:/Users/petr david/STM32CubeIDE/WBA_ZB_1_6_1/Zigbee_OnOff_Router_Demo/STM32_WPAN/App/app_zigbee_endpoint.c:206:6:APP_ZIGBEE_ConfigGroupAddr	1
+C:/Users/petr david/STM32CubeIDE/WBA_ZB_1_6_1/Zigbee_OnOff_Router_Demo/STM32_WPAN/App/app_zigbee_endpoint.c:225:6:APP_ZIGBEE_GetStartupConfig	2
+C:/Users/petr david/STM32CubeIDE/WBA_ZB_1_6_1/Zigbee_OnOff_Router_Demo/STM32_WPAN/App/app_zigbee_endpoint.c:258:6:APP_ZIGBEE_SetNewDevice	1
+C:/Users/petr david/STM32CubeIDE/WBA_ZB_1_6_1/Zigbee_OnOff_Router_Demo/STM32_WPAN/App/app_zigbee_endpoint.c:272:6:APP_ZIGBEE_PrintApplicationInfo	1
+C:/Users/petr david/STM32CubeIDE/WBA_ZB_1_6_1/Zigbee_OnOff_Router_Demo/STM32_WPAN/App/app_zigbee_endpoint.c:324:6:APP_BSP_Button1Action	3
+C:/Users/petr david/STM32CubeIDE/WBA_ZB_1_6_1/Zigbee_OnOff_Router_Demo/STM32_WPAN/App/app_zigbee_endpoint.c:364:6:APP_BSP_Button3Action	3

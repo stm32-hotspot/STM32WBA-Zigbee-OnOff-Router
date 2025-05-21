@@ -1,0 +1,8 @@
+C:/Users/petr david/STM32CubeIDE/WBA_ZB_1_6_1/Zigbee_OnOff_Router_Demo/Projects/Common/WPAN/Interfaces/hw_rng.c:24:13:RNG_KERNEL_CLK_ON	3
+C:/Users/petr david/STM32CubeIDE/WBA_ZB_1_6_1/Zigbee_OnOff_Router_Demo/Projects/Common/WPAN/Interfaces/hw_rng.c:36:13:RNG_KERNEL_CLK_OFF	1
+C:/Users/petr david/STM32CubeIDE/WBA_ZB_1_6_1/Zigbee_OnOff_Router_Demo/Projects/Common/WPAN/Interfaces/hw_rng.c:64:6:HW_RNG_Disable	5
+C:/Users/petr david/STM32CubeIDE/WBA_ZB_1_6_1/Zigbee_OnOff_Router_Demo/Projects/Common/WPAN/Interfaces/hw_rng.c:78:6:HW_RNG_EnableClock	2
+C:/Users/petr david/STM32CubeIDE/WBA_ZB_1_6_1/Zigbee_OnOff_Router_Demo/Projects/Common/WPAN/Interfaces/hw_rng.c:98:6:HW_RNG_DisableClock	5
+C:/Users/petr david/STM32CubeIDE/WBA_ZB_1_6_1/Zigbee_OnOff_Router_Demo/Projects/Common/WPAN/Interfaces/hw_rng.c:238:6:HW_RNG_Start	13
+C:/Users/petr david/STM32CubeIDE/WBA_ZB_1_6_1/Zigbee_OnOff_Router_Demo/Projects/Common/WPAN/Interfaces/hw_rng.c:258:6:HW_RNG_Get	5
+C:/Users/petr david/STM32CubeIDE/WBA_ZB_1_6_1/Zigbee_OnOff_Router_Demo/Projects/Common/WPAN/Interfaces/hw_rng.c:288:5:HW_RNG_Process	17

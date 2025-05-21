@@ -1,0 +1,5 @@
+C:/Users/petr david/STM32CubeIDE/WBA_ZB_1_6_1/Zigbee_OnOff_Router_Demo/Projects/Common/WPAN/Modules/MemoryManager/advanced_memory_manager.c:125:22:AMM_Init	40	static
+C:/Users/petr david/STM32CubeIDE/WBA_ZB_1_6_1/Zigbee_OnOff_Router_Demo/Projects/Common/WPAN/Modules/MemoryManager/advanced_memory_manager.c:288:22:AMM_DeInit	16	static
+C:/Users/petr david/STM32CubeIDE/WBA_ZB_1_6_1/Zigbee_OnOff_Router_Demo/Projects/Common/WPAN/Modules/MemoryManager/advanced_memory_manager.c:322:22:AMM_Alloc	48	static,ignoring_inline_asm
+C:/Users/petr david/STM32CubeIDE/WBA_ZB_1_6_1/Zigbee_OnOff_Router_Demo/Projects/Common/WPAN/Modules/MemoryManager/advanced_memory_manager.c:473:22:AMM_Free	32	static,ignoring_inline_asm
+C:/Users/petr david/STM32CubeIDE/WBA_ZB_1_6_1/Zigbee_OnOff_Router_Demo/Projects/Common/WPAN/Modules/MemoryManager/advanced_memory_manager.c:579:6:AMM_BackgroundProcess	24	static

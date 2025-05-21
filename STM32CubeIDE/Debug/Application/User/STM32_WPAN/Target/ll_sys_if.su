@@ -1,0 +1,4 @@
+C:/Users/petr david/STM32CubeIDE/WBA_ZB_1_6_1/Zigbee_OnOff_Router_Demo/STM32_WPAN/Target/ll_sys_if.c:80:6:ll_sys_bg_process_init	0	static
+C:/Users/petr david/STM32CubeIDE/WBA_ZB_1_6_1/Zigbee_OnOff_Router_Demo/STM32_WPAN/Target/ll_sys_if.c:91:6:ll_sys_schedule_bg_process	0	static
+C:/Users/petr david/STM32CubeIDE/WBA_ZB_1_6_1/Zigbee_OnOff_Router_Demo/STM32_WPAN/Target/ll_sys_if.c:101:6:ll_sys_schedule_bg_process_isr	0	static
+C:/Users/petr david/STM32CubeIDE/WBA_ZB_1_6_1/Zigbee_OnOff_Router_Demo/STM32_WPAN/Target/ll_sys_if.c:111:6:ll_sys_config_params	16	static
