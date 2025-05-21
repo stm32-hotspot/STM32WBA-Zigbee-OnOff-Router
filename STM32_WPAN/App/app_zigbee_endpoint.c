@@ -54,7 +54,6 @@
 
 #define APP_ZIGBEE_ENDPOINT               17u
 #define APP_ZIGBEE_PROFILE_ID             ZCL_PROFILE_HOME_AUTOMATION
-#define APP_ZIGBEE_DEVICE_ID              ZCL_DEVICE_ONOFF_SWITCH
 #define APP_ZIGBEE_GROUP_ADDRESS          0x0001u
 
 #define APP_ZIGBEE_CLUSTER_ID             ZCL_CLUSTER_ONOFF
@@ -66,10 +65,23 @@
 
 #define APP_ZIGBEE_TOGGLE_PERIOD          (uint32_t)( 1000u ) /* Toggle OnOff every seconds 1s */
 
+/* A subset of WPAN_CHANNELMASK_2400MHZ_HA (HA preferred channels) */
+#define APP_ZIGBEE_CHANNELMASK_2400MHZ_TCLK_PRIMARY  0x02108800 /* Channels 11, 15, 20, 25*/
+
+#define APP_ZIGBEE_LIGHTSWITCH_CONFIG                1
+#define APP_ZIGBEE_LIGHTBULB_CONFIG                  0
+
+
+#if APP_ZIGBEE_LIGHTBULB_CONFIG==1
+#define APP_ZIGBEE_DEVICE_ID              ZCL_DEVICE_ONOFF_LIGHT
+#else
+#define APP_ZIGBEE_DEVICE_ID              ZCL_DEVICE_ONOFF_SWITCH
+#endif
 /* USER CODE END PD */
 
 // -- Redefine Clusters to better code read --
 #define OnOffClient                       pstZbCluster[0]
+#define OnOffServer                       pstZbCluster[1]
 
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
@@ -95,6 +107,21 @@ static void APP_ZIGBEE_ApplicationTaskInit    ( void );
 static void APP_ZIGBEE_OnOffClientStart       ( void );
 static void APP_ZIGBEE_TimerToggleCallback    ( void * arg );
 
+
+#if APP_ZIGBEE_LIGHTBULB_CONFIG==1
+/* OnOff Server Callbacks */
+static enum ZclStatusCodeT  APP_ZIGBEE_OnOffServerOffCallback               ( struct ZbZclClusterT * pstCluster, struct ZbZclAddrInfoT * pstSrcInfo, void * arg );
+static enum ZclStatusCodeT  APP_ZIGBEE_OnOffServerOnCallback                ( struct ZbZclClusterT * pstCluster, struct ZbZclAddrInfoT * pstSrcInfo, void * arg );
+static enum ZclStatusCodeT  APP_ZIGBEE_OnOffServerToggleCallback            ( struct ZbZclClusterT * pstCluster, struct ZbZclAddrInfoT * pstSrcInfo, void * arg );
+
+static struct ZbZclOnOffServerCallbacksT stOnOffServerCallbacks =
+{
+  .off = APP_ZIGBEE_OnOffServerOffCallback,
+  .on = APP_ZIGBEE_OnOffServerOnCallback,
+  .toggle = APP_ZIGBEE_OnOffServerToggleCallback,
+};
+
+#endif
 /* USER CODE END PFP */
 
 /* Functions Definition ------------------------------------------------------*/
@@ -188,13 +215,19 @@ void APP_ZIGBEE_ConfigEndpoints(void)
   ZbZclAddEndpoint( stZigbeeAppInfo.pstZigbee, &stRequest, &stConfig );
   assert( stConfig.status == ZB_STATUS_SUCCESS );
 
+#if APP_ZIGBEE_LIGHTSWITCH_CONFIG==1
   /* Add OnOff Client Cluster */
   stZigbeeAppInfo.OnOffClient = ZbZclOnOffClientAlloc( stZigbeeAppInfo.pstZigbee, APP_ZIGBEE_ENDPOINT );
   assert( stZigbeeAppInfo.OnOffClient != NULL );
   ZbZclClusterEndpointRegister( stZigbeeAppInfo.OnOffClient );
-
+#endif
   /* USER CODE BEGIN APP_ZIGBEE_ConfigEndpoints2 */
-
+#if APP_ZIGBEE_LIGHTBULB_CONFIG==1
+  /* Add OnOff Server Cluster */
+  	stZigbeeAppInfo.OnOffServer = ZbZclOnOffServerAlloc( stZigbeeAppInfo.pstZigbee, APP_ZIGBEE_ENDPOINT, &stOnOffServerCallbacks, NULL );
+    assert( stZigbeeAppInfo.OnOffServer != NULL );
+    ZbZclClusterEndpointRegister( stZigbeeAppInfo.OnOffServer );
+#endif
   /* USER CODE END APP_ZIGBEE_ConfigEndpoints2 */
 }
 
@@ -234,7 +267,7 @@ void APP_ZIGBEE_GetStartupConfig( struct ZbStartupT * pstConfig )
   pstConfig->startupControl = stZigbeeAppInfo.eStartupControl;
   pstConfig->channelList.count = 1;
   pstConfig->channelList.list[0].page = 0;
-  pstConfig->channelList.list[0].channelMask = APP_ZIGBEE_CHANNEL_MASK;
+  pstConfig->channelList.list[0].channelMask = APP_ZIGBEE_CHANNEL_MASK|APP_ZIGBEE_CHANNELMASK_2400MHZ_TCLK_PRIMARY;
 
   /* Set the TX-Power */
   if ( APP_ZIGBEE_SetTxPower( APP_ZIGBEE_TX_POWER ) == false )
@@ -332,8 +365,7 @@ void APP_BSP_Button1Action(void)
     /* Prepare destination */
     memset( &stDest, 0, sizeof( stDest) );
     stDest.endpoint = APP_ZIGBEE_ENDPOINT;
-    stDest.mode = ZB_APSDE_ADDRMODE_GROUP;
-    stDest.nwkAddr = APP_ZIGBEE_GROUP_ADDRESS;
+    stDest.mode = ZB_APSDE_ADDRMODE_NOTPRESENT; // Send request to binded devices
 
     LOG_INFO_APP( "[ONOFF] SW1 pushed, sending 'TOGGLE'" );
     eStatus = ZbZclOnOffClientToggleReq( stZigbeeAppInfo.OnOffClient, &stDest, NULL, NULL );
@@ -382,5 +414,88 @@ void APP_BSP_Button3Action(void)
     }
   }
 }
+
+#if APP_ZIGBEE_LIGHTBULB_CONFIG==1
+/**
+ * @brief  OnOff Server 'Off' command Callback
+ */
+static enum ZclStatusCodeT APP_ZIGBEE_OnOffServerOffCallback( struct ZbZclClusterT * pstCluster, struct ZbZclAddrInfoT * pstSrcInfo, void * arg )
+{
+  enum ZclStatusCodeT   eStatus = ZCL_STATUS_SUCCESS;
+  /* USER CODE BEGIN APP_ZIGBEE_OnOffServerOffCallback */
+  uint8_t cEndpoint;
+
+  cEndpoint = ZbZclClusterGetEndpoint( pstCluster );
+  if ( cEndpoint == APP_ZIGBEE_ENDPOINT)
+  {
+    LOG_INFO_APP( "[ONOFF] Red Led 'OFF'" );
+    APP_LED_OFF( LED_RED );
+    (void)ZbZclAttrIntegerWrite( pstCluster, ZCL_ONOFF_ATTR_ONOFF, 0 );
+  }
+  else
+  {
+    /* Unknown endpoint */
+    eStatus = ZCL_STATUS_FAILURE;
+  }
+
+  /* USER CODE END APP_ZIGBEE_OnOffServerOffCallback */
+  return eStatus;
+}
+
+/**
+ * @brief  OnOff Server 'On' command Callback
+ */
+static enum ZclStatusCodeT APP_ZIGBEE_OnOffServerOnCallback( struct ZbZclClusterT * pstCluster, struct ZbZclAddrInfoT * pstSrcInfo, void * arg )
+{
+  enum ZclStatusCodeT   eStatus = ZCL_STATUS_SUCCESS;
+  /* USER CODE BEGIN APP_ZIGBEE_OnOffServerOnCallback */
+  uint8_t   cEndpoint;
+
+  cEndpoint = ZbZclClusterGetEndpoint( pstCluster );
+  if ( cEndpoint == APP_ZIGBEE_ENDPOINT )
+  {
+    LOG_INFO_APP( "[ONOFF] Red Led 'ON'" );
+    APP_LED_ON( LED_RED );
+    (void)ZbZclAttrIntegerWrite( pstCluster, ZCL_ONOFF_ATTR_ONOFF, 1 );
+  }
+  else
+  {
+    /* Unknown endpoint */
+    eStatus = ZCL_STATUS_FAILURE;
+  }
+
+  /* USER CODE END APP_ZIGBEE_OnOffServerOnCallback */
+  return eStatus;
+}
+
+/**
+ * @brief  OnOff Server 'Toggle' command Callback
+ */
+static enum ZclStatusCodeT APP_ZIGBEE_OnOffServerToggleCallback( struct ZbZclClusterT * pstCluster, struct ZbZclAddrInfoT * pstSrcInfo, void * arg )
+{
+  enum ZclStatusCodeT   eStatus = ZCL_STATUS_SUCCESS;
+  /* USER CODE BEGIN APP_ZIGBEE_OnOffServerToggleCallback */
+  uint8_t   cAttrVal;
+
+  if ( ZbZclAttrRead( pstCluster, ZCL_ONOFF_ATTR_ONOFF, NULL, &cAttrVal, sizeof(cAttrVal), false) != ZCL_STATUS_SUCCESS )
+  {
+    eStatus =  ZCL_STATUS_FAILURE;
+  }
+  else
+  {
+    if ( cAttrVal != 0u )
+    {
+      eStatus = APP_ZIGBEE_OnOffServerOffCallback( pstCluster, pstSrcInfo, arg );
+    }
+    else
+    {
+      eStatus = APP_ZIGBEE_OnOffServerOnCallback( pstCluster, pstSrcInfo, arg );
+    }
+  }
+
+  /* USER CODE END APP_ZIGBEE_OnOffServerToggleCallback */
+  return eStatus;
+}
+#endif
 
 /* USER CODE END FD_LOCAL_FUNCTIONS */
